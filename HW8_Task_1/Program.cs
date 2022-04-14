@@ -148,8 +148,76 @@ void MinElementOnMainDiagonale(int[,] matr)
     }
     Console.Write("Минимальный элемент главной диагонали равен: " + Min + "\n");
 }
-
-
+//9. Сумма элементов побочной диагонали матрицы
+void SumElemtntSecondaryDiagonal(int[,] matr)
+{
+    int Sum = 0;
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            if (i + j == matr.GetLength(1) - 1)
+            {
+                Sum += matr[i, j];
+            }
+        }
+    }
+    Console.Write("Сумма элементов побочной диагонали равна: " + Sum + "\n");
+}
+//10. Произведение элементов побочной диагонали матрицы
+void MultiplicationElementOnSecondaryDiagonale(int[,] matr)
+{
+    int Multiplication = 1;
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            if (i + j == matr.GetLength(1) - 1)
+            {
+                Multiplication *= matr[i, j];
+            }
+        }
+    }
+    Console.Write("Произведение елементов побочной диагонали равно: " + Multiplication + "\n");
+}
+// 11. Максимальный элемент, расположенный на побочной диагонали матрицы
+void MaxElementOnSecondaryDiagonale(int[,] matr)
+{
+    int Max = matr[0, 0];
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            if (i + j == matr.GetLength(1) - 1)
+            {
+                if (matr[i, j] > Max)
+                {
+                    Max = matr[i, j];
+                }
+            }
+        }
+    }
+    Console.Write("Максимальный элемент побочной диагонали равен: " + Max + "\n");
+}
+// 12. Минимальный элемент, расположенный на побочной диагонали матрицы
+void MinElementOnSecondaryDiagonale(int[,] matr)
+{
+    int Min = matr[0, matr.GetLength(1)-1];
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            if (i + j == matr.GetLength(1) - 1)
+            {
+                if (matr[i, j] < Min)
+                {
+                    Min = matr[i, j];
+                }
+            }
+        }
+    }
+    Console.Write("Минимальный элемент побочной диагонали равен: " + Min + "\n");
+}
 
 
 
@@ -179,8 +247,11 @@ Console.Write("Произведение элементов матрицы рав
 MAXElement(matrix);                   // нахождение и вывод максимального элемента
 MinElement(matrix);                   // нахождение и вывод минимального элемента
 SumElementMainDiagonal(matrix);       // нахождение суммы главной диагонал и и её вывод
-MultiplicationElementMainDiagonal(matrix); // нахождение произведения елементов главной диагонали и её вывод
-MaxElementOnMainDiagonal(matrix);       // нахождение максимального элемента гланой диагонали и его вывод 
-MinElementOnMainDiagonale(matrix);
-
+MultiplicationElementMainDiagonal(matrix); // нахождение произведения элементов главной диагонали и вывод
+MaxElementOnMainDiagonal(matrix);       // нахождение максимального элемента гланой диагонали и вывод 
+MinElementOnMainDiagonale(matrix);      // нахождение минимального элемента главной диагонали и вывод
+SumElemtntSecondaryDiagonal(matrix);    // нахождение суммы элементов побочной диагонали и её вывод
+MultiplicationElementOnSecondaryDiagonale(matrix); // нахождение произведения элементов побойной диагонали и вывод
+MaxElementOnSecondaryDiagonale(matrix);   // нахождение максимального элемента побочной диагонали и вывод
+MinElementOnSecondaryDiagonale(matrix);   // нахождение минимального элемнта побочной диагонали и вывод 
 
